@@ -14,7 +14,7 @@ body {
   line-height: 1.6;
 }
 
-img{
+img {
   border-radius: 50%;
   height: 50px;
   width: 50px;
@@ -24,7 +24,6 @@ img{
 img:hover {
   transform: rotate(10deg) scale(1.1);
 }
-
 
 /* =========================
    NAVBAR
@@ -66,12 +65,11 @@ header {
 
 /* HAMBURGER MENU */
 
-.hamburger{
-  display:none;
-  font-size:28px;
-  cursor:pointer;
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
 }
-
 
 /* =========================
    HERO
@@ -108,7 +106,6 @@ header {
   background: #0ea5e9;
 }
 
-
 /* =========================
    SECTIONS
 ========================= */
@@ -124,7 +121,6 @@ h2 {
   margin-bottom: 30px;
   color: #38bdf8;
 }
-
 
 /* =========================
    PROJECTS
@@ -148,7 +144,6 @@ h2 {
   box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
 }
 
-
 /* =========================
    CONTACT
 ========================= */
@@ -158,7 +153,8 @@ form {
   gap: 15px;
 }
 
-input, textarea {
+input,
+textarea {
   padding: 12px;
   border-radius: 6px;
   border: none;
@@ -170,7 +166,6 @@ textarea {
   height: 120px;
 }
 
-
 /* =========================
    FOOTER
 ========================= */
@@ -181,7 +176,6 @@ footer {
   color: #94a3b8;
   animation: fadeIn 1s ease-in-out;
 }
-
 
 /* =========================
    LANGUAGES
@@ -215,7 +209,6 @@ footer {
   box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
 }
 
-
 /* =========================
    SKILLS
 ========================= */
@@ -245,7 +238,6 @@ footer {
   border-radius: 20px;
   animation: fillBar 2s ease-out;
 }
-
 
 /* =========================
    TOOLS
@@ -279,7 +271,6 @@ footer {
   box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
 }
 
-
 /* =========================
    ANIMATIONS
 ========================= */
@@ -307,16 +298,25 @@ footer {
 }
 
 @keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes fillBar {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
-
 
 /* =========================
    SCROLL REVEAL
@@ -354,41 +354,38 @@ footer {
   transform: translateX(0);
 }
 
-
 /* =========================
    MOBILE RESPONSIVE
 ========================= */
 
-@media (max-width:768px){
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: -100%;
+    background: #020617;
+    height: 100vh;
+    width: fit-content;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    gap: 25px;
+    transition: 0.3s;
+  }
 
-.nav-links{
-  position:absolute;
-  top:70px;
-  right:-100%;
-  background:#020617;
-  height:100vh;
-  width:200px;
-  flex-direction:column;
-  align-items:center;
-  padding-top:40px;
-  gap:25px;
-  transition:0.3s;
-}
+  .nav-links.active {
+    right: 0;
+  }
 
-.nav-links.active{
-  right:0;
-}
+  .hamburger {
+    display: block;
+  }
 
-.hamburger{
-  display:block;
-}
+  .hero h1 {
+    font-size: 1.8rem;
+  }
 
-.hero h1{
-  font-size:1.8rem;
-}
-
-section{
-  padding:60px 20px;
-}
-
+  section {
+    padding: 60px 20px;
+  }
 }
