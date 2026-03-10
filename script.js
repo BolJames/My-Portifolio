@@ -1,3 +1,7 @@
+// ==============================
+// SCROLL REVEAL ANIMATION
+// ==============================
+
 function revealOnScroll() {
   const reveals = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
 
@@ -14,3 +18,15 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
+
+
+// ==============================
+// HAMBURGER MENU
+// ==============================
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
