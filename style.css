@@ -1,5 +1,7 @@
-
-    * {
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -16,15 +18,24 @@ img{
   border-radius: 50%;
   height: 50px;
   width: 50px;
+  transition: transform 0.5s ease;
 }
 
-/* NAVBAR */
+img:hover {
+  transform: rotate(10deg) scale(1.1);
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
 header {
   background: #020617;
   padding: 15px 40px;
   position: sticky;
   top: 0;
   z-index: 1000;
+  animation: slideDown 0.8s ease-out;
 }
 
 .navbar {
@@ -53,7 +64,18 @@ header {
   color: #38bdf8;
 }
 
-/* HERO */
+/* HAMBURGER MENU */
+
+.hamburger{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
 .hero {
   height: 90vh;
   display: flex;
@@ -65,6 +87,10 @@ header {
 
 .hero span {
   color: #38bdf8;
+}
+
+.hero h1 {
+  animation: float 3s ease-in-out infinite;
 }
 
 .btn {
@@ -82,11 +108,15 @@ header {
   background: #0ea5e9;
 }
 
-/* SECTIONS */
+
+/* =========================
+   SECTIONS
+========================= */
 section {
   padding: 80px 40px;
   max-width: 1100px;
   margin: auto;
+  animation: fadeIn 1s ease-in-out;
 }
 
 h2 {
@@ -95,7 +125,10 @@ h2 {
   color: #38bdf8;
 }
 
-/* PROJECTS */
+
+/* =========================
+   PROJECTS
+========================= */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -112,9 +145,13 @@ h2 {
 .project-card:hover {
   transform: translateY(-5px);
   border: 1px solid #38bdf8;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
 }
 
-/* CONTACT */
+
+/* =========================
+   CONTACT
+========================= */
 form {
   display: flex;
   flex-direction: column;
@@ -133,30 +170,22 @@ textarea {
   height: 120px;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 footer {
   text-align: center;
   padding: 20px;
   background: #020617;
   color: #94a3b8;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-}
-.cv-btn {
-  margin-top: 60px;
+  animation: fadeIn 1s ease-in-out;
 }
 
 
+/* =========================
+   LANGUAGES
+========================= */
 .languages {
   padding: 60px 20px;
   background: #0f172a;
@@ -183,10 +212,13 @@ footer {
   background: #38bdf8;
   color: #020617;
   transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
 }
 
 
-
+/* =========================
+   SKILLS
+========================= */
 .skills {
   padding: 60px 20px;
   background: #020617;
@@ -211,9 +243,13 @@ footer {
   height: 100%;
   background: linear-gradient(90deg, #38bdf8, #22c55e);
   border-radius: 20px;
+  animation: fillBar 2s ease-out;
 }
 
 
+/* =========================
+   TOOLS
+========================= */
 .tools {
   padding: 60px 20px;
   background: #0f172a;
@@ -240,12 +276,14 @@ footer {
 .tool:hover {
   background: #22c55e;
   color: #020617;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
 }
 
 
 /* =========================
-   GLOBAL FADE-IN ANIMATION
+   ANIMATIONS
 ========================= */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -257,13 +295,6 @@ footer {
   }
 }
 
-section, .hero, footer {
-  animation: fadeIn 1s ease-in-out;
-}
-
-/* =========================
-   NAVBAR SLIDE DOWN
-========================= */
 @keyframes slideDown {
   from {
     transform: translateY(-60px);
@@ -275,78 +306,20 @@ section, .hero, footer {
   }
 }
 
-header {
-  animation: slideDown 0.8s ease-out;
-}
-
-/* =========================
-   HERO TEXT GLOW + FLOAT
-========================= */
 @keyframes float {
   0% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
   100% { transform: translateY(0); }
 }
 
-.hero h1 {
-  animation: float 3s ease-in-out infinite;
-}
-
-/* =========================
-   BUTTON PULSE EFFECT
-========================= */
-/*@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7); }
-  70% { box-shadow: 0 0 0 15px rgba(56, 189, 248, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
-}*/
-
-@keyframes bounce {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-20px); }
-  100% { transform: translateY(0); }
-}
-
-
-.btn {
-  animation: pulse 2.5s infinite;
-}
-
-/* =========================
-   CARD HOVER GLOW
-========================= */
-.project-card:hover,
-.lang-card:hover,
-.tool:hover {
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
-}
-
-/* =========================
-   SKILL BAR FILL ANIMATION
-========================= */
 @keyframes fillBar {
   from { width: 0; }
   to { width: 100%; }
 }
 
-.fill {
-  animation: fillBar 2s ease-out;
-}
 
 /* =========================
-   IMAGE ROTATE ON HOVER
-========================= */
-img {
-  transition: transform 0.5s ease;
-}
-
-img:hover {
-  transform: rotate(10deg) scale(1.1);
-}
-
-
-/* =========================
-   SCROLL ANIMATIONS
+   SCROLL REVEAL
 ========================= */
 .reveal {
   opacity: 0;
@@ -381,3 +354,41 @@ img:hover {
   transform: translateX(0);
 }
 
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width:768px){
+
+.nav-links{
+  position:absolute;
+  top:70px;
+  right:-100%;
+  background:#020617;
+  height:100vh;
+  width:200px;
+  flex-direction:column;
+  align-items:center;
+  padding-top:40px;
+  gap:25px;
+  transition:0.3s;
+}
+
+.nav-links.active{
+  right:0;
+}
+
+.hamburger{
+  display:block;
+}
+
+.hero h1{
+  font-size:1.8rem;
+}
+
+section{
+  padding:60px 20px;
+}
+
+}
